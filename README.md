@@ -24,6 +24,7 @@
 # Credits
 
 - https://github.com/jasmcaus/opencv-course.
+- https://docs.opencv.org/4.5.5/
 
 - All the resources in the [assets](https://github.com/simonefinelli/OpenCV-Notes/assets) folder 
 have been taken from [Pixabay](http://pixabay.com) and [Unsplash](http://unsplash.com).
