@@ -48,4 +48,16 @@ color = (255, 255, 0)
 cv.line(img, pt1, pt2, color, thickness=5)
 cv.imshow('Line', img)
 
+# Polyline
+img = np.zeros((500,500,3), dtype='uint8')
+# points to draw
+pts = np.array([[249,100], [349,150], [299,250], [199,250], [149,150]], np.int32)
+# reshape our points (required by polylines)
+pts = pts.reshape((-1,1,2))
+points = [pts]
+connected = True
+color = (255, 127, 127)
+cv.polylines(img, points, connected, color, thickness=3)
+cv.imshow('Polyline', img)
+
 cv.waitKey(0)
