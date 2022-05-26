@@ -2,8 +2,6 @@
 
 ### A collection of the principals algorithms used in OpenCV.
 
-----
-
 ## Basic Usage
   * Reading Images and Videos
   * Resizing and Rescaling Images/Frames
@@ -24,8 +22,6 @@
   * Face Detection
 
 # Credits
-
-----
 
 - https://github.com/jasmcaus/opencv-course.
 
