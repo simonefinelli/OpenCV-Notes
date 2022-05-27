@@ -10,9 +10,12 @@ def translate(img, x, y):
     :param y: -y >> up, y >> down
     :return: np array
     """
-    trans_mat = np.float32([[1,0,x], [0,1,y]])
+    # translation matrix
+    #        | 1 0 Tx |
+    # t_m  = | 0 1 Ty |
+    t_m = np.float32([[1,0,x], [0,1,y]])
     dimensions = (img.shape[1], img.shape[0])  # width, height
-    return cv.warpAffine(img, trans_mat, dimensions)
+    return cv.warpAffine(img, t_m, dimensions)
 
 
 def rotate(img, angle, rotation_point=None):
@@ -28,7 +31,10 @@ def rotate(img, angle, rotation_point=None):
     if rotation_point is None:
         rotation_point = (width//2, height//2)
 
-    r_mat = cv.getRotationMatrix2D(rotation_point, angle, scale=1.0)
+    # rotation matrix
+    #        | cosTeta -sinTeta |
+    # t_m  = | sinTeta  cosTeta |  where Teta is the angle of rotation
+    r_m = cv.getRotationMatrix2D(rotation_point, angle, scale=1.0)
     dimensions = (width, height)
 
-    return cv.warpAffine(img, r_mat, dimensions)
+    return cv.warpAffine(img, r_m, dimensions)
