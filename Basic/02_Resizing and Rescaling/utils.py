@@ -8,6 +8,6 @@ def rescale_img(img, scale=0.75):
     height = int(height * scale)
     scaling_dimensions = (width, height)  # width and height are swapped
 
-    resized = cv.resize(img, scaling_dimensions, interpolation=cv.INTER_AREA)
+    resized = cv.resize(img, scaling_dimensions, interpolation=cv.INTER_LANCZOS4)
 
     return resized
