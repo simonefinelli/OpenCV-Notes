@@ -29,7 +29,7 @@ kernel_size = (3,3)
 eroded = cv.erode(dilated, kernel_size, iterations=3)  # we went back almost like to the canny
 cv.imshow('Eroded', eroded)
 
-# Resize
+# Resizing
 resized = cv.resize(img, (500,500), interpolation=cv.INTER_AREA)  # ignoring the aspect-ratio
 cv.imshow('Resized', resized)
 
