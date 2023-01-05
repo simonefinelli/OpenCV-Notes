@@ -3,7 +3,7 @@ import numpy as np
 
 # Canny is a specific edge detector (and it uses sobel in one of his stages)
 
-path_to_img = '../assets/images/parrot.jpg'
+path_to_img = '../../assets/images/parrot.jpg'
 img = cv.imread(path_to_img)  # 3 channel image (BGR)
 # cv.imshow('Parrot', img)
 
