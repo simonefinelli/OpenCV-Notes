@@ -1,7 +1,7 @@
 import cv2 as cv
 import numpy as np
 
-path_to_img = '../assets/images/moon.jpg'
+path_to_img = '../../assets/images/moon.jpg'
 img = cv.imread(path_to_img)  # 3 channel image (BGR)
 cv.imshow('Moon', img)
 
@@ -19,7 +19,7 @@ canny = cv.Canny(blur, 50, 60)
 cv.imshow('Canny Edges', canny)
 
 ################################
-# # we can use instead of blurring + edge detection the threshold
+# # we can use instead of blurring + edge detection the threshold:
 # threshold = 125  # if a pixel < N is set to 0
 # max_val = 250    # if a pixel > M is set to 255
 # ret, thresh = cv.threshold(gray, threshold, max_val, cv.THRESH_BINARY)  # look at the image and trys to binaraze the image
