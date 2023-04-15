@@ -1,6 +1,6 @@
 # OpenCV-Notes in Python 3
 
-### A collection of the principals algorithms used in OpenCV.
+### A collection of the main algorithms used in OpenCV.
 
 ## Basic Usage
   * Reading Images and Videos
@@ -22,7 +22,6 @@
   * Face Detection
 
 # Credits
-
 - https://github.com/jasmcaus/opencv-course.
 - https://docs.opencv.org/4.5.5/
 
