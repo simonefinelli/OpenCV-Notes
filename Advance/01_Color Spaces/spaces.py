@@ -7,7 +7,7 @@
 import cv2 as cv
 import matplotlib.pyplot as plt
 
-path_to_img = '../assets/images/red_panda.jpg'
+path_to_img = '../../assets/images/red_panda.jpg'
 img = cv.imread(path_to_img)  # 3 channel image (BGR)
 cv.imshow('Red Panda', img)
 

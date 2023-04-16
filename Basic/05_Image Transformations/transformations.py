@@ -2,7 +2,7 @@ import cv2 as cv
 
 from utils import translate, rotate
 
-path_to_img = '../assets/images/forest.jpg'
+path_to_img = '../../assets/images/forest.jpg'
 img = cv.imread(path_to_img)  # 3 channel image (BGR)
 cv.imshow('Waterfall', img)
 
