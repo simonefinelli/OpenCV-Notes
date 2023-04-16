@@ -1,6 +1,6 @@
 # OpenCV-Notes in Python 3
 
-### A collection of the main algorithms used in OpenCV.
+### A collection of the main topics used in OpenCV.
 
 ## Basic Usage
   * Reading Images and Videos
@@ -23,7 +23,7 @@
 
 # Credits
 - https://github.com/jasmcaus/opencv-course.
-- https://docs.opencv.org/4.5.5/
+- https://docs.opencv.org/
 
 - All the resources in the [assets](https://github.com/simonefinelli/OpenCV-Notes/assets) folder 
 have been taken from [Pixabay](http://pixabay.com) and [Unsplash](http://unsplash.com).
