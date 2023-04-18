@@ -46,6 +46,11 @@ cv.imshow('Cropped', cropped)
 # Brightness increasing/decreasing
 b_m = np.ones(gray.shape, dtype='uint8') * 100
 gray_bright = cv.add(gray, b_m)  # increase the brightness by 100
-cv.imshow('Brightness', gray_bright)
+cv.imshow('Brightness +', gray_bright)
+
+b_m = np.ones(gray.shape, dtype='uint8') * 100
+gray_bright = cv.subtract(gray, b_m)  # increase the brightness by 100
+cv.imshow('Brightness -', gray_bright)
+
 
 cv.waitKey(0)
