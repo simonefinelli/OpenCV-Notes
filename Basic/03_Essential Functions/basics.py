@@ -1,4 +1,5 @@
 import cv2 as cv
+import numpy as np
 
 path_to_img = '../../assets/images/cat.jpg'
 img = cv.imread(path_to_img)  # 3 channel image (BGR)
@@ -7,6 +8,11 @@ cv.imshow('Cat', img)
 # Grayscale
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)  # only 1 channel is used
 cv.imshow('Gray', gray)
+print(gray.shape)
+
+# Grayscale
+gray = cv.imread(path_to_img, 0)
+cv.imshow('Gray 2', gray)
 print(gray.shape)
 
 # Blur
@@ -36,5 +42,10 @@ start_row, start_col = int(img.shape[0] * 0.25), int(img.shape[1] * 0.25)  # hei
 end_row, end_col = int(img.shape[0] * 0.65), int(img.shape[1] * 0.65)
 cropped = img[start_row:end_row, start_col:end_col]
 cv.imshow('Cropped', cropped)
+
+# Brightness increasing/decreasing
+b_m = np.ones(gray.shape, dtype='uint8') * 100
+gray_bright = cv.add(gray, b_m)  # increase the brightness by 100
+cv.imshow('Brightness', gray_bright)
 
 cv.waitKey(0)
