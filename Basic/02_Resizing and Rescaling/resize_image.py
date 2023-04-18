@@ -1,5 +1,5 @@
 import cv2 as cv
-from utils import rescale_img
+from utilities.utility import rescale_img
 
 """
 Interpolation Methods:
@@ -16,6 +16,12 @@ cv.imshow('Forest', img)
 
 # simple resizing
 new_dim = (500, 500)
+# for interpolation chose:
+# - cv.INTER_AREA - good for shrinking or down-sampling
+# - cv.INTER_NEAREST - faster
+# - cv.INTER_LINEAR - good for zooming or up-sampling (default)
+# - cv.INTER_CUBIC - better
+# - cv.INTER_LANCZOS4 - best
 img_resized = cv.resize(img, new_dim, interpolation=cv.INTER_LANCZOS4)
 cv.imshow('Simple Resize', img_resized)
 

@@ -1,5 +1,5 @@
 import cv2 as cv
-from utils import rescale_img
+from utilities.utility import rescale_img
 
 path_to_vid = '../assets/videos/swiss.mp4'
 
