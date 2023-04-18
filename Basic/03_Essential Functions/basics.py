@@ -1,12 +1,13 @@
 import cv2 as cv
 
-path_to_img = '../assets/images/cat.jpg'
+path_to_img = '../../assets/images/cat.jpg'
 img = cv.imread(path_to_img)  # 3 channel image (BGR)
 cv.imshow('Cat', img)
 
 # Grayscale
-gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)  # only 1 channel is used
 cv.imshow('Gray', gray)
+print(gray.shape)
 
 # Blur
 kernel_size = (5,5)
@@ -29,12 +30,11 @@ kernel_size = (3,3)
 eroded = cv.erode(dilated, kernel_size, iterations=3)  # we went back almost like to the canny
 cv.imshow('Eroded', eroded)
 
-# Resizing
-resized = cv.resize(img, (500,500), interpolation=cv.INTER_AREA)  # ignoring the aspect-ratio
-cv.imshow('Resized', resized)
-
 # Cropping
-cropped = img[100:300, 100:300]
+img = cv.imread(path_to_img)
+start_row, start_col = int(img.shape[0] * 0.25), int(img.shape[1] * 0.25)  # height and width
+end_row, end_col = int(img.shape[0] * 0.65), int(img.shape[1] * 0.65)
+cropped = img[start_row:end_row, start_col:end_col]
 cv.imshow('Cropped', cropped)
 
 cv.waitKey(0)
