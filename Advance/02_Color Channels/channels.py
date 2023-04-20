@@ -2,7 +2,7 @@ import cv2 as cv
 import numpy as np
 
 
-path_to_img = '../assets/images/flowers.jpg'
+path_to_img = '../../assets/images/flowers.jpg'
 img = cv.imread(path_to_img)  # 3 channel image (BGR)
 cv.imshow('Flowers', img)
 
