@@ -8,7 +8,7 @@ capture = cv.VideoCapture(video_path)  # the method can take integer arg to sele
 
 # we have to read the video (or streaming) frame by frame
 while True:
-    is_read, frame = capture.read()  # is_read says if the frame is been correctly read or not
+    is_read, frame = capture.read()  # is_read says if the frame has been correctly read or not
 
     if not is_read:  # frames are finished
         break

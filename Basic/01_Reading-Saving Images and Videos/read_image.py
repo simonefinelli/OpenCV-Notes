@@ -1,10 +1,12 @@
 import cv2 as cv
 import numpy as np
 
-path_to_img = '../../assets/images/red_panda.jpg'
+from utilities.utility import imshow
+
+img_path = '../../assets/images/red_panda.jpg'
 
 # read an image from folder
-img = cv.imread(path_to_img)  # the image is read as numpy array
+img = cv.imread(img_path)  # the image is read as numpy array
 
 # check the image shape
 shape = img.shape  # height, width, depth
@@ -20,3 +22,6 @@ cv.imshow('Lesser Panda', img)  # name of window and matrix image
 cv.waitKey(0)  # to prevent the window closing
                # 0 - indefinite waiting
                # otherwise the windows is going to close after N milliseconds
+
+# we can also use pyplot to show the image (check the utility function)
+imshow('Lesser Panda', img)
