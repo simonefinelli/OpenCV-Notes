@@ -18,6 +18,7 @@ cv.imshow('Gray', gray)
 # BGR to HSV (Hue Saturation Value)
 # HSV isolates color (Hue) from brightness, the Hue is less subject to
 # fluctuations due to lighting conditions
+# The position of the channels   is: (Hue, Saturation, Value)
 hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
 cv.imshow('HSV', hsv)
 
@@ -41,6 +42,5 @@ cv.imshow('RGB', rgb)  # remember now the channels are swapped!
 hsv_bgr = cv.cvtColor(img, cv.COLOR_HSV2BGR)
 hsv_gray = cv.cvtColor(hsv_bgr, cv.COLOR_BGR2GRAY)
 cv.imshow('HSV to Gray', hsv_gray)
-
 
 cv.waitKey(0)
