@@ -5,7 +5,7 @@ import numpy as np
 # gradients and edge are completely different things (mathematically), but in
 # we can use them like edges.
 
-path_to_img = '../assets/images/parrot.jpg'
+path_to_img = '../../assets/images/parrot.jpg'
 img = cv.imread(path_to_img)  # 3 channel image (BGR)
 
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
