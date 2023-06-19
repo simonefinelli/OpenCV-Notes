@@ -1,14 +1,14 @@
 import cv2 as cv
 import numpy as np
 import time
-# with thresholding we can binarize the image (pixel can only have 2 values: 0 - 255)
 
-path_to_img = '../assets/images/flowers.jpg'
+path_to_img = '../../assets/images/flowers.jpg'
 img = cv.imread(path_to_img)  # 3 channel image (BGR)
-# cv.imshow('Flowers', img)
+cv.imshow('Flowers', img)
 
+# with thresholding, we can binarize the image (pixel can only have 2 values: 0 - 255)
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-cv.imshow('Gray', gray)
+cv.imshow('Gray', gray)  # 1 channel
 
 #######################
 # Simple Thresholding #
@@ -57,5 +57,7 @@ cv.imshow(f'Adaptive Threshold)', adaptive_thresh)
 # instead of cv.ADAPTIVE_THRESH_MEAN_C we can use cv.ADAPTIVE_THRESH_GAUSSIAN_C
 # that add weights at each pixel value in the kernel and then computes the mean
 # across the pixels
+
+
 
 cv.waitKey(0)
