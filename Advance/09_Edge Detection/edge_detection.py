@@ -1,4 +1,5 @@
 import cv2 as cv
+import numpy as np
 
 """
  Canny is a specific edge detector (and it uses sobel in one of his stages).
@@ -8,7 +9,8 @@ import cv2 as cv
   - The forth argument is aperture_size. It is the size of Sobel kernel used for find image gradients.
     By default it is 3.
 
- The threshold1 and threshold2 in Canny Edge Detector are the gradient values (see ).
+ The threshold1 and threshold2 in Canny Edge Detector are the gradient values (see folder 
+ /assets/theory/canny_edge_derivatives.png).
  In particular any gradient value larger than threshold2 is considered to be an edge, instead, any value below 
  threshold1 is considered not to be an edge. Values in between threshold1 and threshold2 are either classiﬁed as 
  edges or non-edges based on how their intensities are “connected”.
@@ -32,5 +34,23 @@ threshold_1 = 100
 threshold_2 = 210
 canny = cv.Canny(blur, threshold_1, threshold_2)  # passing a blurred image the detector will work better
 cv.imshow('Canny', canny)
+
+
+def auto_canny(image):
+    """
+    Finds optimal thresholds based on median image pixel intensity.
+
+    :param image: input image as numpy array
+    """
+    blurred_img = cv.blur(image, ksize=(5, 5))
+    med_val = np.median(blurred_img)
+    lower = int(max(0, med_val))
+    upper = int(min(255, med_val))
+    edges = cv.Canny(image=image, threshold1=lower, threshold2=upper)
+    return edges
+
+
+auto_canny = auto_canny(img)
+cv.imshow("Auto-Canny", auto_canny)
 
 cv.waitKey(0)
