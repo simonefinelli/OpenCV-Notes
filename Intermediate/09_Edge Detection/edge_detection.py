@@ -1,5 +1,5 @@
 import cv2 as cv
-import numpy as np
+from utils import auto_canny
 
 """
  Canny is a specific edge detector (and it uses sobel in one of his stages).
@@ -35,21 +35,7 @@ threshold_2 = 210
 canny = cv.Canny(blur, threshold_1, threshold_2)  # passing a blurred image the detector will work better
 cv.imshow('Canny', canny)
 
-
-def auto_canny(image):
-    """
-    Finds optimal thresholds based on median image pixel intensity.
-
-    :param image: input image as numpy array
-    """
-    blurred_img = cv.blur(image, ksize=(5, 5))
-    med_val = np.median(blurred_img)
-    lower = int(max(0, med_val))
-    upper = int(min(255, med_val))
-    edges = cv.Canny(image=image, threshold1=lower, threshold2=upper)
-    return edges
-
-
+# use canny using "automatic" thresholds
 auto_canny = auto_canny(img)
 cv.imshow("Auto-Canny", auto_canny)
 
